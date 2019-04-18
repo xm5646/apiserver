@@ -1,0 +1,35 @@
+server:
+  runmode: debug    # {debug | release | test}
+  addr: :8080
+  name: apiserver
+  url: http://127.0.0.1:8080
+  max_ping_count: 10
+  jwt_secret: da39a3ee5e6b4b0d3255bfef95601890afd80709
+  tls:
+    addr: :8081
+    cert: conf/myth.pem
+    key: conf/myth.key
+db:
+  runmode: dev  # {dev | pro}
+  gormlog: true   # 数据库日志
+  db_max_idle: 10
+  db_max_conn: 100
+  dev:
+    name: db_apiserver
+    addr: 127.0.0.1:3306
+    username: root
+    password: clmAdm1n
+  pro:
+    name: db_apiserver
+    addr: 127.0.0.1:3306
+    username: root
+    password: clmAdm1n
+log:
+  writers: file,stdout
+  logger_level: DEBUG   # {DEBUG | INFO | WARN | ERROR | FATAL}
+  logger_file: log/apiserver.log
+  log_format_text: false
+  rollingPolicy: size
+  log_rotate_date: 1
+  log_rotate_size: 1
+  log_backup_count: 7
