@@ -29,12 +29,13 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		c.String(http.StatusNotFound, "The incorrect API route.")
 	})
 
+	g.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "API server is running.")
+	})
 	// 加载swagger api 文档
 	// 重新生成文档  swag init
 	// 访问地址/swagger/index.html
 	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-
-	g.POST("/login", user.Login)
 
 	svcd := g.Group("/sd")
 	{
@@ -44,11 +45,13 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		svcd.GET("/ram", sd.RAMCheck)
 	}
 
-	u := g.Group("/v1/user")
-	u.Use(middleware.AuthMiddleware())
+	loginGroup := g.Group("/login")
+	loginGroup.POST("/phone", user.PhoneLogin)
+	loginGroup.POST("/phone/check/:phoneNumber", user.CheckPhoneIsRegistered)
+
+	userGroup := g.Group("/v1/user")
+	userGroup.Use(middleware.AuthMiddleware())
 	{
-		u.POST("", user.Create)
-		u.DELETE("/:id", user.Delete)
 	}
 
 	return g

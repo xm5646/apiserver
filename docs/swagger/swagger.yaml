@@ -1,0 +1,88 @@
+basePath: '{{.BasePath}}'
+definitions:
+  handler.Response:
+    properties:
+      code:
+        type: integer
+      data:
+        type: object
+      message:
+        type: string
+    type: object
+  user.PhoneLoginRequest:
+    properties:
+      password:
+        type: string
+      phone:
+        type: string
+      register:
+        type: boolean
+    type: object
+host: '{{.Host}}'
+info:
+  contact: {}
+  description: |-
+    拼车车App后台服务器,主要提供容器集群调度服务.
+    <a href='?docExpansion=none'>折叠</a>  <a href='index.html'>展开</a>
+  license: {}
+  title: 拼车车App后台服务器API文档
+  version: "0.2"
+paths:
+  /login/phone:
+    post:
+      consumes:
+      - application/json
+      description: 用户通过手机号登录
+      parameters:
+      - description: 用户手机登录凭证
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/user.PhoneLoginRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.Response'
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: 用户通过手机号登录
+      tags:
+      - login
+  /login/phone/check/{phoneNumber}:
+    get:
+      consumes:
+      - application/json
+      description: 根据手机号判断用户是否已经注册,如果已注册返回true, 如果未注册返回false,并发送短信验证码
+      parameters:
+      - description: 手机号
+        in: path
+        name: phoneNumber
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.Response'
+            type: object
+      security:
+      - ApiKeyAuth: []
+      summary: 根据手机号判断用户是否已经注册
+      tags:
+      - login
+schemes:
+- http
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

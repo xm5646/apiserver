@@ -15,7 +15,7 @@ func RequestId() gin.HandlerFunc {
 		// 查看请求是否包含requestID, 如果有就直接使用
 		requestId := c.Request.Header.Get("X-Request-Id")
 		if requestId == "" {
-			u4, _ := uuid.NewV4()
+			u4 := uuid.NewV4()
 			requestId = u4.String()
 		}
 

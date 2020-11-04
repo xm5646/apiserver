@@ -18,6 +18,15 @@ var (
 	cfg = pflag.StringP("config", "c", "", "apiserver config file path.")
 )
 
+// @title  拼车车App后台服务器API文档
+// @version 0.2
+// @description 拼车车App后台服务器,主要提供容器集群调度服务.
+// @description <a href='?docExpansion=none'>折叠</a>  <a href='index.html'>展开</a>
+// @schemes http
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
+
 func main() {
 	// 解析命令行参数
 	pflag.Parse()

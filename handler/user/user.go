@@ -13,3 +13,9 @@ type CreateRequest struct {
 type CreateResponse struct {
 	Username string `json:"username"`
 }
+
+type PhoneLoginRequest struct {
+	Phone    string `json:"phone"`
+	Password string `json:"password"`
+	Register bool   `json:"register"`
+}
