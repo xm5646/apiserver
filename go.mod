@@ -13,7 +13,6 @@ require (
 	github.com/go-playground/universal-translator v0.17.0
 	github.com/go-playground/validator/v10 v10.4.1
 	github.com/jinzhu/gorm v1.9.16
-	github.com/lexkong/log v0.0.0-20180607165131-972f9cd951fc
 	github.com/onsi/ginkgo v1.14.0 // indirect
 	github.com/satori/go.uuid v1.2.0
 	github.com/shirou/gopsutil v2.20.7+incompatible
@@ -22,6 +21,6 @@ require (
 	github.com/swaggo/gin-swagger v1.2.0
 	github.com/swaggo/swag v1.6.7
 	github.com/willf/pad v0.0.0-20200313202418-172aa767f2a4
-	github.com/xm5646/powernotify v0.0.0-20201103145941-71c33d3d1c4d // indirect
+	github.com/xm5646/log v0.0.0-20210115055222-b80c2a0524e2
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
 )

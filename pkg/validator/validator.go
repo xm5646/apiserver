@@ -74,5 +74,3 @@ func RegisterTagTranslation(tag string, messages map[string]string) {
 		})
 	}
 }
-
-

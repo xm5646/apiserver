@@ -19,7 +19,8 @@ var (
 	ErrToken            = &Errno{Code: 10005, Message: "Error occurred while signing the JSON web token.", CNMessage: "Token生成失败"}
 	ErrJsonParse        = &Errno{Code: 10006, Message: "Error occurred while parse json to struct.", CNMessage: "解析Json数据异常"}
 	ErrInitWebsocket    = &Errno{Code: 10007, Message: "Error occurred while upgrade the request to websocket.", CNMessage: "创建websocket会话失败"}
-	ErrMessageBroadcast = &Errno{Code: 10007, Message: "Error occurred while broadcast message to room users.", CNMessage: "广播房间消息失败"}
+	ErrMessageBroadcast = &Errno{Code: 10008, Message: "Error occurred while broadcast message to room users.", CNMessage: "广播房间消息失败"}
+	ErrTokenInvalid     = &Errno{Code: 10009, Message: "Token was invalid.", CNMessage: "Token无效"}
 
 	// 数据库错误
 	ErrValidation     = &Errno{Code: 20001, Message: "Validation failed.", CNMessage: "验证失败"}

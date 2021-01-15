@@ -72,3 +72,9 @@
 {"level":"INFO","timestamp":"2020-11-04 20:37:39.876","file":"model/base.go:37","msg":"mysql connection string: root:clmAdm1n@tcp(47.92.202.208:3306)/chenler_pcc_1_0?charset=utf8\u0026parseTime=true\u0026loc=Local"}
 {"level":"INFO","timestamp":"2020-11-04 20:37:39.929","file":"apiserver/main.go:71","msg":"Start to listening the incoming requests on http address: :9001"}
 {"level":"INFO","timestamp":"2020-11-04 20:37:39.930","file":"apiserver/main.go:59","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-01-15 13:58:28.254","file":"model/base.go:37","msg":"mysql connection string: root:clmAdm1n@tcp(47.92.202.208:3306)/chenler_pcc_1_0?charset=utf8\u0026parseTime=true\u0026loc=Local"}
+{"level":"INFO","timestamp":"2021-01-15 13:58:28.299","file":"apiserver/main.go:71","msg":"Start to listening the incoming requests on http address: :9001"}
+{"level":"INFO","timestamp":"2021-01-15 13:58:28.301","file":"apiserver/main.go:59","msg":"The router has been deployed successfully."}
+{"level":"INFO","timestamp":"2021-01-15 13:59:59.547","file":"model/base.go:37","msg":"mysql connection string: root:clmAdm1n@tcp(47.92.202.208:3306)/chenler_pcc_1_0?charset=utf8\u0026parseTime=true\u0026loc=Local"}
+{"level":"INFO","timestamp":"2021-01-15 13:59:59.595","file":"apiserver/main.go:71","msg":"Start to listening the incoming requests on http address: :9001"}
+{"level":"INFO","timestamp":"2021-01-15 13:59:59.597","file":"apiserver/main.go:59","msg":"The router has been deployed successfully."}

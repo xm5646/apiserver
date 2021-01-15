@@ -97,6 +97,9 @@
         "handler.Response": {
             "type": "object",
             "properties": {
+                "cn_message": {
+                    "type": "string"
+                },
                 "code": {
                     "type": "integer"
                 },

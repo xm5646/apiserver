@@ -13,7 +13,7 @@ type User struct {
 }
 
 func TestValid(t *testing.T) {
-	var user = User{Cc: "1",Phone: "123", Age: 9}
+	var user = User{Cc: "1", Phone: "123", Age: 9}
 
 	if errs := vd.Struct(&user); errs != nil {
 		for _, err := range errs.(validator.ValidationErrors) {

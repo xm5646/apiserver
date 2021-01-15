@@ -32,12 +32,12 @@ type UserModel struct {
 	ID       int    `json:"id" gorm:"column:id;primary_key;AUTO_INCREMENT;"`
 	NickName string `json:"nick_name" gorm:"column:nickname"`
 	Avatar   string `json:"avatar" gorm:"column:avatar;default:'user_avatar.png'"`
-	Sex  uint8 `json:"sex" gorm:"column:sex;"`
-	Age uint8 `json:"age" gorm:"column:age;"`
-	Sign string `json:"sign" gorm:"column:sign;"`
-	Company string `json:"company" gorm:"column:company;"`
-	Business uint8 `json:"business" gorm:"column:business;"`
-	Phone string `json:"phone" gorm:"column:phone;"`
+	Sex      uint8  `json:"sex" gorm:"column:sex;"`
+	Age      uint8  `json:"age" gorm:"column:age;"`
+	Sign     string `json:"sign" gorm:"column:sign;"`
+	Company  string `json:"company" gorm:"column:company;"`
+	Business uint8  `json:"business" gorm:"column:business;"`
+	Phone    string `json:"phone" gorm:"column:phone;"`
 }
 
 var UserTableName = "pcc_user"

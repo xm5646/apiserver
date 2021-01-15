@@ -28,8 +28,6 @@ import "time"
 //)
 //comment '用户登录认证表';
 
-
-
 var (
 	AuthTypePhone   = "phone"
 	AuthTypeWebChat = "webchat"

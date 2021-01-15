@@ -12,17 +12,19 @@ import (
 )
 
 type Response struct {
-	Code    int         `json:"code"`
-	Message string      `json:"message"`
-	Data    interface{} `json:"data"`
+	Code      int         `json:"code"`
+	Message   string      `json:"message"`
+	CNMessage string      `json:"cn_message"`
+	Data      interface{} `json:"data"`
 }
 
 func SendResponse(c *gin.Context, err error, data interface{}) {
-	code, message := errno.DecodeErr(err)
+	code, message, cnMessage := errno.DecodeErr(err)
 
 	c.JSON(http.StatusOK, Response{
-		Code:    code,
-		Message: message,
-		Data:    data,
+		Code:      code,
+		Message:   message,
+		CNMessage: cnMessage,
+		Data:      data,
 	})
 }
