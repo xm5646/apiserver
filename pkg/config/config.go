@@ -6,6 +6,9 @@
 package config
 
 import (
+	"fmt"
+	"os"
+	"runtime"
 	"strings"
 
 	"github.com/fsnotify/fsnotify"
@@ -56,6 +59,13 @@ func (c *Config) initConfig() error {
 }
 
 func (c *Config) initLog() {
+	// 设置项目绝对路径
+	_, file, _, ok := runtime.Caller(1)
+	if ok {
+		file = file[:len(file)-20]
+		fmt.Println(file)
+		os.Setenv("CHASSIS_HOME", file)
+	}
 	passLagerCfg := log.PassLagerCfg{
 		Writers:        viper.GetString("log.writers"),
 		LoggerLevel:    viper.GetString("log.logger_level"),
