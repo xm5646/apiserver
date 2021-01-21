@@ -9,7 +9,6 @@ import (
 	_ "apiserver/docs"
 
 	"apiserver/handler/sd"
-	"apiserver/handler/user"
 	"apiserver/router/middleware"
 	"github.com/gin-gonic/gin"
 	"github.com/swaggo/gin-swagger"
@@ -44,10 +43,6 @@ func Load(g *gin.Engine, mw ...gin.HandlerFunc) *gin.Engine {
 		svcd.GET("cpu", sd.CPUCheck)
 		svcd.GET("/ram", sd.RAMCheck)
 	}
-
-	loginGroup := g.Group("/login")
-	loginGroup.POST("/phone", user.PhoneLogin)
-	loginGroup.POST("/phone/check/:phoneNumber", user.CheckPhoneIsRegistered)
 
 	userGroup := g.Group("/v1/user")
 	userGroup.Use(middleware.AuthMiddleware())

@@ -1,0 +1,4 @@
+2021-01-21 13:39:12.579 INFO model/base.go:37 mysql connection string: root:clmAdm1n@tcp(47.92.202.208:3306)/chenler_pcc_1_0?charset=utf8&parseTime=true&loc=Local
+2021-01-21 13:39:12.632 INFO model/base.go:56 Database connected.
+2021-01-21 13:39:12.632 INFO apiserver/main.go:71 Start to listening the incoming requests on http address: :9001
+2021-01-21 13:39:12.633 INFO apiserver/main.go:59 The router has been deployed successfully.
